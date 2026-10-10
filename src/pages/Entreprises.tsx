@@ -46,7 +46,7 @@ const caseStudies = [
     company: "Flotte moto-livraison — Dakar",
     result: "45 motos Eclair et Cargo déployées pour une plateforme de e-commerce, avec swap illimité mensuel sur 3 stations VOLTARA Swap.",
     stats: [
-      { value: 45, label: "Motos électrifiées" },
+      { value: 45, suffix: "", label: "Motos électrifiées" },
       { value: 62, suffix: "%", label: "Coût d'usage en moins" },
       { value: 9, suffix: " M", label: "FCFA économisés par an" },
     ],
@@ -55,9 +55,9 @@ const caseStudies = [
     company: "Société de transport de personnel — Accra",
     result: "8 berlines Prestige en location longue durée pour les déplacements de direction, bornes installées au siège via VOLTARA Solar.",
     stats: [
-      { value: 8, label: "Berlines en LLD" },
+      { value: 8, suffix: "", label: "Berlines en LLD" },
       { value: 100, suffix: "%", label: "Trajets électrifiés" },
-      { value: 24, label: "Mois de contrat" },
+      { value: 24, suffix: "", label: "Mois de contrat" },
     ],
   },
 ];

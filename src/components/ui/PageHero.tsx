@@ -43,7 +43,7 @@ export function PageHero({
             <Link to="/" className="hover:text-volt">
               Accueil
             </Link>
-            {crumbs.map((c, i) => (
+            {crumbs.map((c) => (
               <span key={c.label} className="flex items-center gap-1.5">
                 <ChevronRight size={12} />
                 {c.href ? (

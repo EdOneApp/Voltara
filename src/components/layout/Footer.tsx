@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Linkedin, Youtube, Send } from "lucide-react";
+import { Send } from "lucide-react";
 import { Container } from "../ui/Container";
 import { poles } from "../../data/poles";
+
+const socials = ["Facebook", "Instagram", "LinkedIn", "YouTube"];
 
 const legalLinks = [
   { label: "Mentions légales", href: "/legal/mentions-legales" },
@@ -41,14 +43,14 @@ export function Footer() {
               L'énergie qui fait avancer l'Afrique. Véhicules et motos électriques, recharge, swapping, VTC, livraison et solaire.
             </p>
             <div className="mt-6 flex gap-3">
-              {[Facebook, Instagram, Linkedin, Youtube].map((Icon, i) => (
+              {socials.map((name) => (
                 <a
-                  key={i}
+                  key={name}
                   href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-steel hover:border-volt hover:text-volt"
-                  aria-label="Réseau social VOLTARA"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 font-mono text-xs text-steel hover:border-volt hover:text-volt"
+                  aria-label={`VOLTARA sur ${name}`}
                 >
-                  <Icon size={16} />
+                  {name[0]}
                 </a>
               ))}
             </div>
