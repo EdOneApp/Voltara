@@ -5,12 +5,13 @@ import { Section } from "../../components/ui/Section";
 import { Container } from "../../components/ui/Container";
 import { Button } from "../../components/ui/Button";
 import { Badge } from "../../components/ui/Badge";
-import { VisualPlaceholder } from "../../components/ui/VisualPlaceholder";
+import { Photo } from "../../components/ui/Photo";
 import { VehicleCard } from "../../components/ui/VehicleCard";
 import { FAQAccordion } from "../../components/ui/FAQAccordion";
 import { getVehicleBySlug, vehicles } from "../../data/vehicles";
 import { formatXOF } from "../../lib/utils";
 import { computeSimulation } from "../../lib/simulator";
+import { vehiclePhotos, nightCars, scooterExtra, chargingPhotos, deliveryPhotos } from "../../data/images";
 
 const colors = [
   { name: "Nuit électrique", hex: "#07090D" },
@@ -53,6 +54,11 @@ export function Fiche() {
 
   const costPerKmElectric = Math.round((vehicle.batteryKwh * 180) / vehicle.autonomyKm); // ~180 FCFA/kWh indicatif
 
+  const gallery =
+    vehicle.type === "moto"
+      ? [vehiclePhotos[vehicle.slug], scooterExtra.rowParked, chargingPhotos.stationUrban, deliveryPhotos.riderBag]
+      : [vehiclePhotos[vehicle.slug], nightCars.blackCarRoad, chargingPhotos.stationModern, chargingPhotos.homeCharger];
+
   const faqItems = [
     { question: "Quels documents sont nécessaires pour commander ?", answer: "Une pièce d'identité valide et un justificatif de domicile suffisent pour un achat comptant. Pour un dossier VOLTARA Pay, un justificatif de revenus ou d'activité est également demandé." },
     { question: "Puis-je faire un essai avant de commander ?", answer: "Oui, réservez un essai dans l'agence VOLTARA la plus proche directement depuis cette fiche." },
@@ -72,16 +78,20 @@ export function Fiche() {
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
               <div className="grid grid-cols-2 gap-3">
-                {Array.from({ length: 4 }).map((_, i) => (
-                  <VisualPlaceholder
-                    key={i}
-                    icon={vehicle.type === "moto" ? "🏍️" : "🚗"}
-                    tone={vehicle.type === "moto" ? "cyan" : "volt"}
-                    className={i === 0 ? "col-span-2 aspect-[16/10]" : "aspect-square"}
-                    label={`Photo ${i + 1} / ${vehicle.photoCount} — shooting VOLTARA`}
+                {gallery.map((src, i) => (
+                  <Photo
+                    key={src + i}
+                    src={src}
+                    alt={`${vehicle.name} — vue ${i + 1}`}
+                    ratio={i === 0 ? "aspect-[16/10]" : "aspect-square"}
+                    className={i === 0 ? "col-span-2" : undefined}
+                    priority={i === 0}
                   />
                 ))}
               </div>
+              <p className="mt-2 text-[11px] text-steel">
+                Photos d'illustration — {vehicle.photoCount} photos du vrai shooting VOLTARA seront publiées à la sortie du modèle.
+              </p>
             </div>
 
             <div>

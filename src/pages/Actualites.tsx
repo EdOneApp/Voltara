@@ -4,6 +4,7 @@ import { PageHero } from "../components/ui/PageHero";
 import { Section } from "../components/ui/Section";
 import { posts } from "../data/posts";
 import { cn } from "../lib/utils";
+import { businessPhotos } from "../data/images";
 
 function formatDate(date: string) {
   return new Date(date).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
@@ -26,6 +27,7 @@ export function Actualites() {
   return (
     <>
       <PageHero
+        image={businessPhotos.colleagues}
         eyebrow="Blog VOLTARA"
         title="Actualités VOLTARA"
         description="Guides pratiques sur la recharge, le swap de batteries et le paiement échelonné, actualités du réseau et retours d'expérience d'entreprises qui électrifient leur flotte."

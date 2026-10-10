@@ -16,7 +16,9 @@ import { Button } from "../components/ui/Button";
 import { Badge } from "../components/ui/Badge";
 import { FAQAccordion } from "../components/ui/FAQAccordion";
 import { CTASection } from "../components/ui/CTASection";
-import { VisualPlaceholder } from "../components/ui/VisualPlaceholder";
+import { PhoneMockup } from "../components/ui/PhoneMockup";
+import { GoAppScreen, AppHeaderRow, PhoneTabBar } from "../components/ui/AppScreens";
+import { deliveryPhotos } from "../data/images";
 
 const audiences = [
   {
@@ -101,6 +103,7 @@ export function VoltaraGo() {
     <>
       <PageHero
         tone="go"
+        image={deliveryPhotos.riderIntersection}
         eyebrow="VOLTARA Go"
         title="La livraison à moto électrique, rapide et sans émission."
         description="Colis, repas, médicaments ou commandes e-commerce : la flotte de motos électriques VOLTARA Go livre en moins de 45 minutes dans les grandes villes couvertes, avec un suivi en temps réel à chaque étape."
@@ -186,7 +189,11 @@ export function VoltaraGo() {
               Position GPS du livreur rafraîchie en continu dans l'application.
             </div>
           </div>
-          <VisualPlaceholder icon="📦" tone="go" label="Écran suivi de livraison — à venir" className="mx-auto aspect-[9/16] max-w-64" />
+          <PhoneMockup className="max-w-64">
+            <AppHeaderRow title="VOLTARA Go" subtitle="Livraison #VG-8841" />
+            <GoAppScreen />
+            <PhoneTabBar active="wallet" />
+          </PhoneMockup>
         </div>
       </Section>
 

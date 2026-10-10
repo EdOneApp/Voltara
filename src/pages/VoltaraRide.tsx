@@ -16,7 +16,9 @@ import { Button } from "../components/ui/Button";
 import { Badge } from "../components/ui/Badge";
 import { FAQAccordion } from "../components/ui/FAQAccordion";
 import { CTASection } from "../components/ui/CTASection";
-import { VisualPlaceholder } from "../components/ui/VisualPlaceholder";
+import { PhoneMockup } from "../components/ui/PhoneMockup";
+import { RideAppScreen, AppHeaderRow, PhoneTabBar } from "../components/ui/AppScreens";
+import { nightCars } from "../data/images";
 
 const steps = [
   {
@@ -147,6 +149,7 @@ export function VoltaraRide() {
     <>
       <PageHero
         tone="cyan"
+        image={nightCars.blackCarRoad}
         eyebrow="VOLTARA Ride"
         title="Roulez en ville, zéro bruit, zéro émission."
         description="VOLTARA Ride connecte passagers et chauffeurs sur une flotte 100 % électrique : Citadine One, Berline Prestige et motos-taxis Moto Ride. Commandez une course en moins de 3 minutes, suivez votre chauffeur en direct et payez sans sortir d'espèces."
@@ -174,7 +177,11 @@ export function VoltaraRide() {
               <div className="flex h-12 items-center rounded-xl border border-white/15 px-5 text-sm text-steel">Google Play</div>
             </div>
           </div>
-          <VisualPlaceholder icon="📱" tone="cyan" label="Écran app VOLTARA Ride — à venir" className="mx-auto aspect-[9/16] max-w-64" />
+          <PhoneMockup className="max-w-64">
+            <AppHeaderRow title="VOLTARA Ride" subtitle="Course en cours" />
+            <RideAppScreen />
+            <PhoneTabBar active="home" />
+          </PhoneMockup>
         </div>
       </Section>
 

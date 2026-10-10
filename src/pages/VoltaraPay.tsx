@@ -6,6 +6,7 @@ import { SectionHeading } from "../components/ui/SectionHeading";
 import { Button } from "../components/ui/Button";
 import { FAQAccordion } from "../components/ui/FAQAccordion";
 import { vehicles } from "../data/vehicles";
+import { nightCars } from "../data/images";
 import { computeSimulation, type Frequency } from "../lib/simulator";
 import { formatXOF } from "../lib/utils";
 
@@ -41,6 +42,7 @@ export function VoltaraPay() {
   return (
     <>
       <PageHero
+        image={nightCars.blackSedan}
         eyebrow="VOLTARA Pay"
         title="Payez petit à petit, en toute transparence."
         description="Le paiement échelonné conçu pour l'Afrique : apport ajustable, durée de 6 à 48 mois, règlement en Mobile Money au jour, à la semaine ou au mois."

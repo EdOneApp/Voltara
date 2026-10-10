@@ -6,6 +6,7 @@ import { Button } from "../../components/ui/Button";
 import { FAQAccordion } from "../../components/ui/FAQAccordion";
 import { CTASection } from "../../components/ui/CTASection";
 import { formatXOF } from "../../lib/utils";
+import { solarPhotos } from "../../data/images";
 
 const ateliers = [
   { city: "Abidjan", address: "Boulevard Latrille, Cocody — 2 ateliers" },
@@ -34,6 +35,7 @@ export function Maintenance() {
     <>
       <PageHero
         tone="cyan"
+        image={solarPhotos.technicianInstalling}
         eyebrow="Services — Maintenance"
         title="Un réseau d'ateliers agréés pour garder votre véhicule en parfait état."
         description="Garantie batterie et moteur, pièces détachées disponibles, forfaits d'entretien clairs : la maintenance VOLTARA couvre tout le cycle de vie de votre véhicule ou de votre moto électrique."

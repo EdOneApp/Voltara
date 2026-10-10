@@ -7,7 +7,7 @@ type Variant = "primary" | "secondary" | "ghost" | "light";
 type Size = "md" | "lg";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full font-semibold font-body transition-colors duration-200 whitespace-nowrap";
+  "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full font-semibold font-body transition-colors duration-200 whitespace-nowrap";
 
 const variants: Record<Variant, string> = {
   primary: "bg-volt text-night hover:bg-white",
@@ -53,8 +53,15 @@ export function Button({
       transition={{ duration: 0.15, ease: "easeOut" }}
       className={classes}
     >
-      {children}
-      {icon}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 rounded-full opacity-0 transition-opacity duration-300 group-active:opacity-100 group-active:duration-0"
+        style={{ background: "radial-gradient(circle, rgba(198,255,61,0.9) 0%, rgba(198,255,61,0) 70%)" }}
+      />
+      <span className="relative inline-flex items-center gap-2">
+        {children}
+        {icon}
+      </span>
     </motion.span>
   );
 

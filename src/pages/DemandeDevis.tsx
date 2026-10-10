@@ -7,6 +7,7 @@ import { SectionHeading } from "../components/ui/SectionHeading";
 import { Button } from "../components/ui/Button";
 import { FAQAccordion } from "../components/ui/FAQAccordion";
 import { cn, formatXOF } from "../lib/utils";
+import { businessPhotos } from "../data/images";
 
 type NeedType = "bornes" | "solaire" | "flotte" | "volume";
 
@@ -155,6 +156,7 @@ export function DemandeDevis() {
   return (
     <>
       <PageHero
+        image={businessPhotos.meeting}
         eyebrow="Devis"
         title="Demander un devis"
         description="Bornes de recharge, solaire, électrification de flotte ou achat groupé de véhicules : obtenez une estimation indicative immédiate et une réponse de nos conseillers sous 24h ouvrées."

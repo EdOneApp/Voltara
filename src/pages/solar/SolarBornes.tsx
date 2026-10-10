@@ -5,9 +5,12 @@ import { SectionHeading } from "../../components/ui/SectionHeading";
 import { Button } from "../../components/ui/Button";
 import { Badge } from "../../components/ui/Badge";
 import { FAQAccordion } from "../../components/ui/FAQAccordion";
-import { VisualPlaceholder } from "../../components/ui/VisualPlaceholder";
+import { Photo } from "../../components/ui/Photo";
 import { CTASection } from "../../components/ui/CTASection";
 import { formatXOF } from "../../lib/utils";
+import { solarPhotos, chargingPhotos } from "../../data/images";
+
+const realisationPhotos = [chargingPhotos.homeCharger, solarPhotos.rooftopWork, chargingPhotos.stationUrban, solarPhotos.technicianTwo];
 
 const gammes = [
   {
@@ -63,6 +66,7 @@ export function SolarBornes() {
     <>
       <PageHero
         tone="solar"
+        image={solarPhotos.technicianSunny}
         eyebrow="VOLTARA Solar — Bornes de recharge"
         title="Une borne de recharge pour chaque usage, de la maison au dépôt de flotte."
         description="Domicile, entreprise, copropriété ou station rapide : VOLTARA Solar conçoit, installe et entretient votre infrastructure de recharge, avec une étude gratuite et un devis sous 5 jours."
@@ -134,8 +138,8 @@ export function SolarBornes() {
           description="En attendant la mise en ligne de notre galerie photo, voici un aperçu du type de réalisations menées par nos équipes."
         />
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {Array.from({ length: 4 }).map((_, i) => (
-            <VisualPlaceholder key={i} icon="⚡" tone="solar" label="Avant / après — réalisation VOLTARA Solar" />
+          {realisationPhotos.map((src, i) => (
+            <Photo key={src + i} src={src} alt="Réalisation VOLTARA Solar" ratio="aspect-square" />
           ))}
         </div>
       </Section>

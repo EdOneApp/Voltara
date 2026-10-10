@@ -4,7 +4,7 @@ import { PageHero } from "../components/ui/PageHero";
 import { Section } from "../components/ui/Section";
 import { SectionHeading } from "../components/ui/SectionHeading";
 import { Button } from "../components/ui/Button";
-import { VisualPlaceholder } from "../components/ui/VisualPlaceholder";
+import { StationsMap } from "../components/ui/StationsMap";
 
 interface Agency {
   city: string;
@@ -123,7 +123,7 @@ export function Contact() {
                 </a>
               </div>
             </div>
-            <VisualPlaceholder icon="📍" tone="cyan" label="Carte des agences — à venir" />
+            <StationsMap compact />
           </div>
         </div>
       </Section>

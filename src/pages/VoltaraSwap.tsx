@@ -10,6 +10,7 @@ import { FAQAccordion } from "../components/ui/FAQAccordion";
 import { CTASection } from "../components/ui/CTASection";
 import { vehicles } from "../data/vehicles";
 import { stations } from "../data/stations";
+import { deliveryPhotos } from "../data/images";
 import { formatXOF } from "../lib/utils";
 
 const steps = [
@@ -81,6 +82,7 @@ export function VoltaraSwap() {
     <>
       <PageHero
         tone="cyan"
+        image={deliveryPhotos.riderBag}
         eyebrow="VOLTARA Swap"
         title="Échangez votre batterie en moins de 2 minutes."
         description="Plus jamais d'attente à la recharge : dans chaque station VOLTARA Swap, déposez votre batterie déchargée et repartez avec une batterie chargée à 100 %, pour quelques centaines de FCFA."

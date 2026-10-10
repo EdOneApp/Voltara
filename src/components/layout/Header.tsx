@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, MessageCircle, ChevronDown, ArrowUpRight } from "lucide-react";
+import { Menu, X, MessageCircle, ChevronDown, ArrowUpRight, Globe } from "lucide-react";
 import { Container } from "../ui/Container";
 import { Button } from "../ui/Button";
 import { navPanels, topLevelLinks } from "../../data/nav";
@@ -37,7 +37,9 @@ export function Header() {
       <div className="border-b border-white/5 bg-night/70 py-1.5 text-xs text-steel backdrop-blur">
         <Container className="flex items-center justify-between">
           <div className="hidden items-center gap-4 sm:flex">
-            <button className="hover:text-volt">🌍 Côte d'Ivoire</button>
+            <button className="flex items-center gap-1.5 hover:text-volt">
+              <Globe size={13} /> Côte d'Ivoire
+            </button>
             <span className="text-white/10">|</span>
             <button className="hover:text-volt">FR / EN</button>
           </div>
@@ -58,42 +60,46 @@ export function Header() {
           scrolled || mobileOpen ? "border-b border-white/10 bg-night/85 backdrop-blur-xl" : "bg-transparent",
         )}
       >
-        <Container className="flex h-18 items-center justify-between py-3">
-          <Link to="/" className="flex items-center gap-2 font-display text-xl font-bold tracking-tight">
+        <Container className="flex h-18 items-center justify-between gap-4 py-3">
+          <Link to="/" className="flex shrink-0 items-center gap-2 font-display text-xl font-bold tracking-tight">
             <span className="voltara-gradient-text">VOLTARA</span>
           </Link>
 
-          <nav className="hidden items-center gap-1 lg:flex" onMouseLeave={() => setOpenPanel(null)}>
+          <nav className="hidden items-center xl:flex" onMouseLeave={() => setOpenPanel(null)}>
             {navPanels.map((panel) => (
               <div key={panel.key} className="relative" onMouseEnter={() => setOpenPanel(panel.key)}>
                 <button
                   className={cn(
-                    "flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium transition-colors",
+                    "flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-2 text-[13px] font-medium transition-colors",
                     openPanel === panel.key ? "text-volt" : "text-white/85 hover:text-volt",
                   )}
                 >
                   {panel.label}
-                  <ChevronDown size={14} className={cn("transition-transform", openPanel === panel.key && "rotate-180")} />
+                  <ChevronDown size={13} className={cn("transition-transform", openPanel === panel.key && "rotate-180")} />
                 </button>
               </div>
             ))}
             {topLevelLinks.map((l) => (
-              <Link key={l.href} to={l.href} className="rounded-full px-4 py-2 text-sm font-medium text-white/85 hover:text-volt">
+              <Link
+                key={l.href}
+                to={l.href}
+                className="whitespace-nowrap rounded-full px-3 py-2 text-[13px] font-medium text-white/85 hover:text-volt"
+              >
                 {l.label}
               </Link>
             ))}
           </nav>
 
-          <div className="hidden items-center gap-3 lg:flex">
-            <Button href="/demande-de-devis" variant="secondary" size="md">
+          <div className="hidden shrink-0 items-center gap-2.5 xl:flex">
+            <Button href="/demande-de-devis" variant="secondary" size="md" className="!px-4 !text-[13px]">
               Demander un devis
             </Button>
-            <Button href="/devenir-partenaire" size="md">
+            <Button href="/devenir-partenaire" size="md" className="!px-4 !text-[13px]">
               Devenir partenaire
             </Button>
           </div>
 
-          <button className="lg:hidden" onClick={() => setMobileOpen((v) => !v)} aria-label="Ouvrir le menu">
+          <button className="shrink-0 xl:hidden" onClick={() => setMobileOpen((v) => !v)} aria-label="Ouvrir le menu">
             {mobileOpen ? <X /> : <Menu />}
           </button>
         </Container>
@@ -107,7 +113,7 @@ export function Header() {
               transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
               onMouseEnter={() => setOpenPanel(openPanel)}
               onMouseLeave={() => setOpenPanel(null)}
-              className="hidden border-t border-white/10 bg-night/95 backdrop-blur-xl lg:block"
+              className="hidden border-t border-white/10 bg-night/95 backdrop-blur-xl xl:block"
             >
               <Container className="grid grid-cols-3 gap-10 py-8">
                 <div className="col-span-2 grid grid-cols-2 gap-x-8 gap-y-5">
@@ -145,7 +151,7 @@ export function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="overflow-y-auto border-b border-white/10 bg-night lg:hidden"
+            className="overflow-y-auto border-b border-white/10 bg-night xl:hidden"
             style={{ maxHeight: "calc(100vh - 100px)" }}
           >
             <Container className="flex flex-col gap-6 py-6">

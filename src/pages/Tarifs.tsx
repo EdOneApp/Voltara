@@ -5,6 +5,7 @@ import { Section } from "../components/ui/Section";
 import { SectionHeading } from "../components/ui/SectionHeading";
 import { CTASection } from "../components/ui/CTASection";
 import { cn, formatXOF } from "../lib/utils";
+import { chargingPhotos } from "../data/images";
 
 const countries = [
   { label: "Côte d'Ivoire", currency: "FCFA" },
@@ -67,6 +68,7 @@ export function Tarifs() {
     <>
       <PageHero
         tone="volt"
+        image={chargingPhotos.stationOutdoor}
         eyebrow="Tarifs VOLTARA"
         title="Tous nos tarifs, pôle par pôle, en un seul endroit."
         description="Recharge, swap, location, livraison, VTC et abonnements entreprises : des tarifs clairs et sans frais cachés sur tout le réseau VOLTARA."

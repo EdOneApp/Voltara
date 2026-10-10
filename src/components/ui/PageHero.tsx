@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { cn } from "../../lib/utils";
 import { Container } from "./Container";
+import { ElectricLines } from "./ElectricLines";
 
 interface Crumb {
   label: string;
@@ -18,6 +19,7 @@ export function PageHero({
   actions,
   tone = "volt",
   compact = false,
+  image,
 }: {
   eyebrow?: string;
   title: string;
@@ -26,6 +28,7 @@ export function PageHero({
   actions?: ReactNode;
   tone?: "volt" | "cyan" | "solar" | "go";
   compact?: boolean;
+  image?: string;
 }) {
   const glow: Record<string, string> = {
     volt: "bg-volt/20",
@@ -36,6 +39,14 @@ export function PageHero({
 
   return (
     <section className={cn("relative overflow-hidden border-b border-white/10 bg-night", compact ? "pt-28 pb-10" : "pt-32 pb-16 sm:pt-40 sm:pb-24")}>
+      {image && (
+        <>
+          <img src={image} alt="" aria-hidden="true" loading="eager" className="absolute inset-0 h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-night via-night/60 to-night/15" />
+          <div className="absolute inset-0 bg-gradient-to-r from-night via-night/30 to-transparent" />
+        </>
+      )}
+      <ElectricLines className="inset-x-0 top-0 h-56 w-full" opacity={0.35} />
       <div className={cn("pointer-events-none absolute -top-40 right-0 h-96 w-96 rounded-full blur-[120px]", glow[tone])} />
       <Container className="relative">
         {crumbs && (

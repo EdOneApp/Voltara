@@ -21,6 +21,7 @@ import { SectionHeading } from "../components/ui/SectionHeading";
 import { Button } from "../components/ui/Button";
 import { FAQAccordion } from "../components/ui/FAQAccordion";
 import { cn } from "../lib/utils";
+import { businessPhotos } from "../data/images";
 
 type PartnerType = "station" | "revendeur" | "installateur" | "flotte" | "investisseur" | "collectivite";
 
@@ -193,6 +194,7 @@ export function DevenirPartenaire() {
   return (
     <>
       <PageHero
+        image={businessPhotos.modernMeeting}
         eyebrow="Partenariats"
         title="Devenir partenaire VOLTARA"
         description="Hôte de station, revendeur, installateur, flotte, investisseur ou collectivité : rejoignez l'écosystème VOLTARA et participez à la transition énergétique de l'Afrique."

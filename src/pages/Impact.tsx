@@ -5,6 +5,7 @@ import { SectionHeading } from "../components/ui/SectionHeading";
 import { StatCounter } from "../components/ui/StatCounter";
 import { FAQAccordion } from "../components/ui/FAQAccordion";
 import { CTASection } from "../components/ui/CTASection";
+import { solarPhotos } from "../data/images";
 
 interface Sdg {
   number: string;
@@ -64,6 +65,7 @@ export function Impact() {
   return (
     <>
       <PageHero
+        image={solarPhotos.installationRoof}
         eyebrow="Impact"
         title="Une mobilité qui profite au climat, aux emplois et aux villes africaines."
         description="VOLTARA mesure son impact à chaque kilomètre parcouru : moins de CO₂, plus d'emplois locaux, des batteries valorisées jusqu'au bout, et un alignement clair avec les Objectifs de Développement Durable de l'ONU."

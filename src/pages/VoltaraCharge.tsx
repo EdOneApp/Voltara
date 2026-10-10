@@ -9,7 +9,9 @@ import { StatCounter } from "../components/ui/StatCounter";
 import { StationsMap } from "../components/ui/StationsMap";
 import { FAQAccordion } from "../components/ui/FAQAccordion";
 import { CTASection } from "../components/ui/CTASection";
-import { VisualPlaceholder } from "../components/ui/VisualPlaceholder";
+import { PhoneMockup } from "../components/ui/PhoneMockup";
+import { ChargeAppScreen, AppHeaderRow, PhoneTabBar } from "../components/ui/AppScreens";
+import { chargingPhotos } from "../data/images";
 import { stations, statusLabels, countries, type Station } from "../data/stations";
 import { cn } from "../lib/utils";
 
@@ -96,6 +98,7 @@ export function VoltaraCharge() {
     <>
       <PageHero
         tone="cyan"
+        image={chargingPhotos.stationModern}
         eyebrow="VOLTARA Charge"
         title="Le réseau de recharge panafricain, disponible en temps réel."
         description="Des bornes rapides dans les grandes villes d'Afrique de l'Ouest et de l'Est, visibles et réservables depuis l'application, avec un statut mis à jour en direct."
@@ -239,7 +242,11 @@ export function VoltaraCharge() {
       {/* Application */}
       <Section tone="graphite">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          <VisualPlaceholder icon="📱" tone="cyan" label="Écran charge en cours — à venir" className="mx-auto aspect-[9/16] max-w-64 lg:order-2" />
+          <PhoneMockup className="max-w-64 lg:order-2">
+            <AppHeaderRow title="VOLTARA App" subtitle="Plateau, Abidjan" />
+            <ChargeAppScreen />
+            <PhoneTabBar active="map" />
+          </PhoneMockup>
           <div className="lg:order-1">
             <SectionHeading
               eyebrow="Application"

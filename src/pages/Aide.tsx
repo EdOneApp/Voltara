@@ -4,6 +4,7 @@ import { PageHero } from "../components/ui/PageHero";
 import { Section } from "../components/ui/Section";
 import { FAQAccordion } from "../components/ui/FAQAccordion";
 import { cn } from "../lib/utils";
+import { cityNightAerial } from "../data/images";
 
 interface HelpItem {
   category: string;
@@ -265,6 +266,7 @@ export function Aide() {
   return (
     <>
       <PageHero
+        image={cityNightAerial}
         eyebrow="Centre d'aide"
         title="Toutes les réponses sur l'écosystème VOLTARA."
         description="Recherchez une question ou filtrez par univers : véhicules, financement, recharge, swap, solaire, entreprises et compte."

@@ -8,6 +8,7 @@ import { Button } from "../../components/ui/Button";
 import { VehicleCard } from "../../components/ui/VehicleCard";
 import { vehicles } from "../../data/vehicles";
 import { formatXOF, cn } from "../../lib/utils";
+import { vehiclePhotos } from "../../data/images";
 
 const categories = ["Toutes", "Citadine", "SUV", "Utilitaire", "Berline", "Moto", "Scooter"] as const;
 
@@ -38,6 +39,7 @@ export function Catalogue() {
   return (
     <>
       <PageHero
+        image={vehiclePhotos["suv-terra"]}
         eyebrow="VOLTARA Drive"
         title="Le catalogue des véhicules et motos électriques VOLTARA"
         description="Achat comptant, location ou paiement échelonné : filtrez par type, autonomie, prix et compatibilité swap pour trouver le véhicule adapté à votre usage."

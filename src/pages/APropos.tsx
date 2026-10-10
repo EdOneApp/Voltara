@@ -3,8 +3,11 @@ import { PageHero } from "../components/ui/PageHero";
 import { Section } from "../components/ui/Section";
 import { SectionHeading } from "../components/ui/SectionHeading";
 import { FAQAccordion } from "../components/ui/FAQAccordion";
-import { VisualPlaceholder } from "../components/ui/VisualPlaceholder";
+import { Photo } from "../components/ui/Photo";
 import { CTASection } from "../components/ui/CTASection";
+import { teamPortraits, businessPhotos, cityNightAerial } from "../data/images";
+
+const teamPhotos = [teamPortraits.ceo, teamPortraits.coo, teamPortraits.energy, teamPortraits.cto, teamPortraits.country];
 
 interface TeamMember {
   name: string;
@@ -76,6 +79,7 @@ export function APropos() {
   return (
     <>
       <PageHero
+        image={cityNightAerial}
         eyebrow="VOLTARA"
         title="Rendre la mobilité électrique et l'énergie propre accessibles en Afrique."
         description="VOLTARA est un écosystème intégré : véhicules électriques, financement adapté, recharge, swap de batteries, VTC, livraison et solaire. Une seule promesse, depuis Abidjan : une énergie fiable, abordable et locale."
@@ -123,16 +127,16 @@ export function APropos() {
               En quelques mois, VOLTARA est passée d'un projet local à un écosystème à sept pôles — Drive, Pay, Ride, Go, Charge, Swap et Solar — et a commencé son expansion vers le Sénégal, le Ghana, puis le Nigeria et le Kenya. L'objectif : prouver qu'un modèle conçu en Afrique, pour l'Afrique, peut se déployer à l'échelle du continent.
             </p>
           </div>
-          <VisualPlaceholder icon="🏁" tone="cyan" label="Photo d'équipe fondatrice — à venir" />
+          <Photo src={businessPhotos.officeTeam} alt="Équipe fondatrice VOLTARA" ratio="aspect-[4/3]" />
         </div>
       </Section>
 
       <Section tone="dark">
         <SectionHeading eyebrow="Équipe dirigeante" title="Les personnes qui pilotent VOLTARA" align="center" />
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {team.map((member) => (
+          {team.map((member, i) => (
             <div key={member.name} className="rounded-2xl border border-white/10 bg-graphite p-6">
-              <VisualPlaceholder icon="👤" label="Portrait — à venir" className="aspect-square" />
+              <Photo src={teamPhotos[i]} alt={member.name} ratio="aspect-square" />
               <p className="mt-5 font-display text-lg font-semibold text-white">{member.name}</p>
               <p className="text-sm font-mono uppercase tracking-wide text-volt">{member.role}</p>
               <p className="mt-3 text-sm leading-relaxed text-steel">{member.bio}</p>

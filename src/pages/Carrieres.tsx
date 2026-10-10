@@ -5,6 +5,7 @@ import { Section } from "../components/ui/Section";
 import { SectionHeading } from "../components/ui/SectionHeading";
 import { Button } from "../components/ui/Button";
 import { FAQAccordion } from "../components/ui/FAQAccordion";
+import { businessPhotos } from "../data/images";
 
 interface Value {
   icon: typeof Heart;
@@ -62,6 +63,7 @@ export function Carrieres() {
   return (
     <>
       <PageHero
+        image={businessPhotos.colleagues}
         eyebrow="Carrières"
         title="Construisez l'énergie qui fait avancer l'Afrique."
         description="VOLTARA recrute des profils techniques, commerciaux et opérationnels dans chacun de ses pays d'implantation. Rejoignez une équipe qui construit une infrastructure, pas seulement une application."

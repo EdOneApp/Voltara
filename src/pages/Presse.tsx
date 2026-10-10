@@ -3,7 +3,7 @@ import { PageHero } from "../components/ui/PageHero";
 import { Section } from "../components/ui/Section";
 import { SectionHeading } from "../components/ui/SectionHeading";
 import { Button } from "../components/ui/Button";
-import { VisualPlaceholder } from "../components/ui/VisualPlaceholder";
+import { businessPhotos } from "../data/images";
 
 interface PressRelease {
   date: string;
@@ -42,6 +42,7 @@ export function Presse() {
   return (
     <>
       <PageHero
+        image={businessPhotos.meeting}
         eyebrow="Presse"
         title="Actualités, ressources et contacts pour les journalistes."
         description="Communiqués de presse, kit média et contacts dédiés pour toute demande d'interview, de visuel ou d'information sur VOLTARA."
@@ -73,7 +74,15 @@ export function Presse() {
               Télécharger le kit média
             </Button>
           </div>
-          <VisualPlaceholder icon="🖼️" tone="volt" label="Logos & charte graphique — à venir" />
+          <div className="flex aspect-[4/3] flex-col items-center justify-center gap-6 rounded-2xl border border-white/10 bg-graphite p-8">
+            <img src="/favicon.svg" alt="Monogramme VOLTARA" className="h-24 w-24" />
+            <span className="font-display text-3xl font-bold voltara-gradient-text">VOLTARA</span>
+            <div className="flex gap-2">
+              {["#07090D", "#C6FF3D", "#22E3D6", "#F5B83D"].map((hex) => (
+                <span key={hex} className="h-7 w-7 rounded-full border border-white/15" style={{ backgroundColor: hex }} />
+              ))}
+            </div>
+          </div>
         </div>
       </Section>
 

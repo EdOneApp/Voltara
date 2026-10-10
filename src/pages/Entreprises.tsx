@@ -1,4 +1,4 @@
-import { Truck, Wallet, BarChart3, Leaf, Car, Zap, Sun } from "lucide-react";
+import { Truck, Wallet, BarChart3, Leaf, Zap, Sun } from "lucide-react";
 import { PageHero } from "../components/ui/PageHero";
 import { Section } from "../components/ui/Section";
 import { SectionHeading } from "../components/ui/SectionHeading";
@@ -6,8 +6,9 @@ import { Button } from "../components/ui/Button";
 import { Badge } from "../components/ui/Badge";
 import { StatCounter } from "../components/ui/StatCounter";
 import { FAQAccordion } from "../components/ui/FAQAccordion";
-import { VisualPlaceholder } from "../components/ui/VisualPlaceholder";
+import { Photo } from "../components/ui/Photo";
 import { CTASection } from "../components/ui/CTASection";
+import { businessPhotos } from "../data/images";
 
 const flotte = [
   {
@@ -75,6 +76,7 @@ export function Entreprises() {
     <>
       <PageHero
         tone="go"
+        image={businessPhotos.fleetParking}
         eyebrow="VOLTARA Entreprises"
         title="Électrifiez votre flotte, vos bornes et votre énergie, avec un seul interlocuteur."
         description="Location longue durée, financement, bornes au dépôt, solaire commercial : VOLTARA accompagne les PME, grands comptes et administrations dans toute leur transition énergétique."
@@ -105,7 +107,7 @@ export function Entreprises() {
 
       <Section tone="graphite">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          <VisualPlaceholder icon={<Car size={32} />} tone="go" label="Flotte VOLTARA en entreprise" />
+          <Photo src={businessPhotos.officeTeam} alt="Équipe VOLTARA Entreprises" ratio="aspect-[4/3]" />
           <div>
             <SectionHeading
               eyebrow="Location longue durée"

@@ -7,6 +7,7 @@ import { Badge } from "../../components/ui/Badge";
 import { FAQAccordion } from "../../components/ui/FAQAccordion";
 import { CTASection } from "../../components/ui/CTASection";
 import { formatXOF } from "../../lib/utils";
+import { nightCars } from "../../data/images";
 
 const offres = [
   {
@@ -69,6 +70,7 @@ export function Assurance() {
     <>
       <PageHero
         tone="cyan"
+        image={nightCars.blackCarParked}
         eyebrow="Services — Assurance"
         title="Assurez votre véhicule, votre moto et votre batterie électrique."
         description="Des formules pensées pour l'électrique : protection batterie, assistance recharge en panne, et des tarifs adaptés à l'usage particulier ou professionnel."

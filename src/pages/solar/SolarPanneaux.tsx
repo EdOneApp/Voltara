@@ -6,9 +6,13 @@ import { SectionHeading } from "../../components/ui/SectionHeading";
 import { Button } from "../../components/ui/Button";
 import { Badge } from "../../components/ui/Badge";
 import { FAQAccordion } from "../../components/ui/FAQAccordion";
-import { VisualPlaceholder } from "../../components/ui/VisualPlaceholder";
+import { Photo } from "../../components/ui/Photo";
+import { ElectricLines } from "../../components/ui/ElectricLines";
 import { CTASection } from "../../components/ui/CTASection";
 import { formatXOF } from "../../lib/utils";
+import { solarPhotos } from "../../data/images";
+
+const realisationPhotos = [solarPhotos.installationRoof, solarPhotos.manInstalling, solarPhotos.technicianInstalling, solarPhotos.rooftopWork];
 
 const segments = [
   {
@@ -78,6 +82,7 @@ export function SolarPanneaux() {
     <>
       <PageHero
         tone="solar"
+        image={solarPhotos.installationRoof}
         eyebrow="VOLTARA Solar — Panneaux photovoltaïques"
         title="Produisez votre propre énergie, réduisez durablement votre facture."
         description="Kits résidentiels, solaire commercial et industriel, carports avec bornes intégrées et stockage par batteries : VOLTARA Solar couvre tous les usages, du foyer à l'usine."
@@ -181,8 +186,8 @@ export function SolarPanneaux() {
           description="En attendant la mise en ligne de notre galerie photo, voici un aperçu du type de réalisations menées par nos équipes."
         />
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {Array.from({ length: 4 }).map((_, i) => (
-            <VisualPlaceholder key={i} icon="☀️" tone="solar" label="Avant / après — réalisation VOLTARA Solar" />
+          {realisationPhotos.map((src, i) => (
+            <Photo key={src + i} src={src} alt="Réalisation VOLTARA Solar" ratio="aspect-square" />
           ))}
         </div>
       </Section>
@@ -199,7 +204,16 @@ export function SolarPanneaux() {
               Découvrir VOLTARA Pay
             </Button>
           </div>
-          <VisualPlaceholder icon={<Wallet size={32} />} tone="solar" label="VOLTARA Pay — financement solaire" />
+          <div className="relative flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-2xl border border-solar/25 bg-gradient-to-br from-solar/15 via-graphite to-graphite">
+            <ElectricLines className="inset-0 h-full w-full" opacity={0.4} />
+            <div className="relative flex flex-col items-center gap-3 text-center">
+              <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-solar/20 text-solar">
+                <Wallet size={30} />
+              </span>
+              <p className="font-display text-sm font-semibold text-white">VOLTARA Pay</p>
+              <p className="max-w-[220px] text-xs text-steel">Financement solaire échelonné, 12 à 60 mois</p>
+            </div>
+          </div>
         </div>
       </Section>
 

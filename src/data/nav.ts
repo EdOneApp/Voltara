@@ -89,6 +89,4 @@ export const navPanels: NavPanel[] = [
 export const topLevelLinks = [
   { label: "Tarifs", href: "/tarifs" },
   { label: "Stations", href: "/voltara-charge" },
-  { label: "À propos", href: "/a-propos" },
-  { label: "Actualités", href: "/actualites" },
 ];

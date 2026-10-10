@@ -5,6 +5,7 @@ import { SectionHeading } from "../../components/ui/SectionHeading";
 import { Button } from "../../components/ui/Button";
 import { FAQAccordion } from "../../components/ui/FAQAccordion";
 import { CTASection } from "../../components/ui/CTASection";
+import { solarPhotos } from "../../data/images";
 
 const modules = [
   { title: "Électricité et sécurité haute tension", duration: "2 semaines", detail: "Habilitation électrique, risques spécifiques à la haute tension, procédures de consignation." },
@@ -32,6 +33,7 @@ export function Formation() {
     <>
       <PageHero
         tone="cyan"
+        image={solarPhotos.technicianTwo}
         eyebrow="Services — Formation"
         title="Devenez technicien certifié en maintenance de véhicules électriques."
         description="VOLTARA forme et certifie les techniciens de son réseau d'ateliers agréés, avec un programme pratique de 10 semaines et des débouchés concrets dans toute l'Afrique de l'Ouest et de l'Est."

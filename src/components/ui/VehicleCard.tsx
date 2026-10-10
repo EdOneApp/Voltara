@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight, Battery, Zap } from "lucide-react";
 import type { Vehicle } from "../../data/vehicles";
 import { formatXOF } from "../../lib/utils";
-import { VisualPlaceholder } from "./VisualPlaceholder";
+import { Photo } from "./Photo";
 import { Badge } from "./Badge";
+import { vehiclePhotos } from "../../data/images";
 
 export function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
   return (
@@ -14,10 +15,11 @@ export function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
       className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-graphite"
     >
       <Link to={`/vehicules/${vehicle.slug}`} className="relative block p-3">
-        <VisualPlaceholder
-          icon={vehicle.type === "moto" ? "🏍️" : "🚗"}
-          tone={vehicle.type === "moto" ? "cyan" : "volt"}
-          className="aspect-[4/3]"
+        <Photo
+          src={vehiclePhotos[vehicle.slug]}
+          alt={vehicle.name}
+          ratio="aspect-[4/3]"
+          className="rounded-xl"
         />
         {vehicle.badge && (
           <div className="absolute left-5 top-5">

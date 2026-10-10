@@ -10,12 +10,16 @@ import { StatCounter } from "../components/ui/StatCounter";
 import { VehicleCard } from "../components/ui/VehicleCard";
 import { StationsMap } from "../components/ui/StationsMap";
 import { CTASection } from "../components/ui/CTASection";
-import { VisualPlaceholder } from "../components/ui/VisualPlaceholder";
+import { Photo } from "../components/ui/Photo";
+import { ElectricLines } from "../components/ui/ElectricLines";
+import { PhoneMockup } from "../components/ui/PhoneMockup";
+import { ChargeAppScreen, RideAppScreen, GoAppScreen, AppHeaderRow, PhoneTabBar } from "../components/ui/AppScreens";
 import { poles, ecosystemSteps } from "../data/poles";
 import { cars, motos } from "../data/vehicles";
 import { stations } from "../data/stations";
 import { testimonials } from "../data/testimonials";
 import { posts } from "../data/posts";
+import { heroCityNight, businessPhotos } from "../data/images";
 import { computeSimulation } from "../lib/simulator";
 import { formatXOF } from "../lib/utils";
 
@@ -39,8 +43,18 @@ export function Home() {
     <>
       {/* 1. Hero */}
       <section className="relative flex min-h-screen items-center overflow-hidden border-b border-white/10 bg-night pt-24">
+        <img
+          src={heroCityNight}
+          alt=""
+          aria-hidden="true"
+          loading="eager"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-night via-night/55 to-night/5" />
+        <div className="absolute inset-0 bg-gradient-to-r from-night via-night/35 to-transparent" />
         <div className="pointer-events-none absolute -top-32 left-1/2 h-[560px] w-[560px] -translate-x-1/2 rounded-full bg-volt/15 blur-[140px]" />
         <div className="pointer-events-none absolute bottom-0 right-0 h-80 w-80 rounded-full bg-cyan/10 blur-[120px]" />
+        <ElectricLines className="inset-0 h-full w-full" opacity={0.3} />
         <div className="noise-bg absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
           <motion.span
@@ -287,17 +301,33 @@ export function Home() {
           description="Localisez une station, démarrez une charge, réservez un swap, commandez une course ou une livraison."
         />
         <div className="mt-14 grid gap-8 sm:grid-cols-3">
-          {[
-            { name: "VOLTARA App", desc: "Recharge, swap, véhicule" },
-            { name: "VOLTARA Ride", desc: "Passager et chauffeur" },
-            { name: "VOLTARA Go", desc: "Livraison et commerçants" },
-          ].map((app) => (
-            <div key={app.name} className="text-center">
-              <VisualPlaceholder icon="📱" label="Écran app — à venir" className="mx-auto aspect-[9/16] max-w-56" />
-              <p className="mt-4 font-display font-semibold">{app.name}</p>
-              <p className="text-sm text-steel">{app.desc}</p>
-            </div>
-          ))}
+          <div className="text-center">
+            <PhoneMockup>
+              <AppHeaderRow title="VOLTARA App" subtitle="Plateau, Abidjan" />
+              <ChargeAppScreen />
+              <PhoneTabBar active="map" />
+            </PhoneMockup>
+            <p className="mt-4 font-display font-semibold">VOLTARA App</p>
+            <p className="text-sm text-steel">Recharge, swap, véhicule</p>
+          </div>
+          <div className="text-center">
+            <PhoneMockup>
+              <AppHeaderRow title="VOLTARA Ride" subtitle="Course en cours" />
+              <RideAppScreen />
+              <PhoneTabBar active="home" />
+            </PhoneMockup>
+            <p className="mt-4 font-display font-semibold">VOLTARA Ride</p>
+            <p className="text-sm text-steel">Passager et chauffeur</p>
+          </div>
+          <div className="text-center">
+            <PhoneMockup>
+              <AppHeaderRow title="VOLTARA Go" subtitle="Livraison #VG-8841" />
+              <GoAppScreen />
+              <PhoneTabBar active="wallet" />
+            </PhoneMockup>
+            <p className="mt-4 font-display font-semibold">VOLTARA Go</p>
+            <p className="text-sm text-steel">Livraison et commerçants</p>
+          </div>
         </div>
         <div className="mt-10 flex justify-center gap-3">
           <div className="flex h-12 items-center rounded-xl border border-white/15 px-5 text-sm text-steel">App Store</div>
@@ -318,7 +348,7 @@ export function Home() {
               Parler à un expert
             </Button>
           </div>
-          <VisualPlaceholder icon="🏢" tone="solar" />
+          <Photo src={businessPhotos.modernMeeting} alt="Équipe VOLTARA Entreprises en réunion" ratio="aspect-[4/3]" />
         </div>
       </Section>
 
