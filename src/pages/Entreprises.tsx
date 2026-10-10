@@ -37,7 +37,7 @@ const caseStudies = [
     company: "PME de distribution — Abidjan",
     result: "12 utilitaires VOLTARA Fret ont remplacé une flotte diesel vieillissante sur les tournées de livraison du Plateau et de Cocody.",
     stats: [
-      { value: 12, label: "Véhicules électrifiés" },
+      { value: 12, suffix: "", label: "Véhicules électrifiés" },
       { value: 40, suffix: "%", label: "Coût carburant en moins" },
       { value: 18, suffix: " t", label: "CO2 évité par an" },
     ],
