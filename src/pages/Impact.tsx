@@ -75,7 +75,7 @@ export function Impact() {
         <div className="mt-12 grid grid-cols-2 gap-10 sm:grid-cols-4">
           <StatCounter value={980} suffix=" t" label="CO₂ évité par an" />
           <StatCounter value={3200} suffix="+" label="Véhicules électriques en circulation" />
-          <StatCounter value={1.4} suffix=" M" prefix="" label="Kilomètres électriques parcourus / mois" />
+          <StatCounter value={140} suffix=" k" label="Kilomètres électriques parcourus / mois" />
           <StatCounter value={16} label="Stations Charge & Swap actives" />
         </div>
         <p className="mt-8 max-w-2xl text-sm text-steel">
