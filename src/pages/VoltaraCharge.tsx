@@ -6,7 +6,7 @@ import { SectionHeading } from "../components/ui/SectionHeading";
 import { Button } from "../components/ui/Button";
 import { Badge } from "../components/ui/Badge";
 import { StatCounter } from "../components/ui/StatCounter";
-import { StationsMap } from "../components/ui/StationsMap";
+import { LazyStationsMap as StationsMap } from "../components/ui/LazyStationsMap";
 import { FAQAccordion } from "../components/ui/FAQAccordion";
 import { CTASection } from "../components/ui/CTASection";
 import { PhoneMockup } from "../components/ui/PhoneMockup";

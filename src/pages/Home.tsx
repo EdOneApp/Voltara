@@ -8,7 +8,7 @@ import { Button } from "../components/ui/Button";
 import { Marquee } from "../components/ui/Marquee";
 import { StatCounter } from "../components/ui/StatCounter";
 import { VehicleCard } from "../components/ui/VehicleCard";
-import { StationsMap } from "../components/ui/StationsMap";
+import { LazyStationsMap as StationsMap } from "../components/ui/LazyStationsMap";
 import { CTASection } from "../components/ui/CTASection";
 import { Photo } from "../components/ui/Photo";
 import { ElectricLines } from "../components/ui/ElectricLines";

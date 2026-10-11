@@ -5,7 +5,7 @@ import { SectionHeading } from "../components/ui/SectionHeading";
 import { Button } from "../components/ui/Button";
 import { Badge } from "../components/ui/Badge";
 import { VehicleCard } from "../components/ui/VehicleCard";
-import { StationsMap } from "../components/ui/StationsMap";
+import { LazyStationsMap as StationsMap } from "../components/ui/LazyStationsMap";
 import { FAQAccordion } from "../components/ui/FAQAccordion";
 import { CTASection } from "../components/ui/CTASection";
 import { vehicles } from "../data/vehicles";

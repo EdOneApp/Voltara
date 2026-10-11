@@ -4,7 +4,7 @@ import { PageHero } from "../components/ui/PageHero";
 import { Section } from "../components/ui/Section";
 import { SectionHeading } from "../components/ui/SectionHeading";
 import { Button } from "../components/ui/Button";
-import { StationsMap } from "../components/ui/StationsMap";
+import { LazyStationsMap as StationsMap } from "../components/ui/LazyStationsMap";
 
 interface Agency {
   city: string;
